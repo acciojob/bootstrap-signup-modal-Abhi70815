@@ -51,5 +51,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Use jQuery to ensure the modal is shown only after DOM is fully loaded
+        $(document).ready(function() {
+            // Ensure the modal is hidden initially
+            $('#signupModal').modal('hide');
+
+            // Show the modal when the Sign Up button is clicked with a delay to handle transition
+            $('button[data-toggle="modal"]').on('click', function() {
+                setTimeout(function() {
+                    $('#signupModal').modal('show');
+                }, 200);
+            });
+
+            // Close the modal when the close button is clicked
+            $('button[data-dismiss="modal"]').on('click', function() {
+                $('#signupModal').modal('hide');
+            });
+        });
+    </script>
 </body>
 </html>
